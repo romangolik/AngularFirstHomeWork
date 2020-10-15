@@ -8,7 +8,7 @@ import {PortalModule} from "./containers/portal/portal.module";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     PortalModule,
