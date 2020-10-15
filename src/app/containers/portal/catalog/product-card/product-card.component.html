@@ -1,0 +1,8 @@
+<div class="product-card">
+  <img src="{{productInfo.imageLink}}">
+  <p>Название: {{productInfo.name}}</p>
+  <p>Описание: {{productInfo.description}}</p>
+  <p *ngIf="productInfo.price !== 0">Цена: {{productInfo.price | currency}}</p>
+  <p *ngIf="productInfo.price === 0">Цена: Под заказ</p>
+</div>
+
