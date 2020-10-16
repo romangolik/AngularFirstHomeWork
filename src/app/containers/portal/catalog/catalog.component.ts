@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {ProductInfo} from "./productinfo";
 import {productsInfo} from "./product-info";
 
@@ -8,12 +8,9 @@ import {productsInfo} from "./product-info";
   templateUrl: './catalog.component.html',
   styleUrls: ['./catalog.component.scss']
 })
-export class CatalogComponent implements OnInit {
+export class CatalogComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
   arrayOfProducts: ProductInfo[] = productsInfo;
 }

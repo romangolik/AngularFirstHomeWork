@@ -1,8 +1,13 @@
 <div class="product-card">
-  <img src="{{productInfo.imageLink}}">
-  <p>Название: {{productInfo.name}}</p>
-  <p>Описание: {{productInfo.description}}</p>
-  <p *ngIf="productInfo.price !== 0">Цена: {{productInfo.price | currency}}</p>
-  <p *ngIf="productInfo.price === 0">Цена: Под заказ</p>
+  <a href="#" class="product-card__image">
+    <img src="{{productInfo.imageLink}}">
+  </a>
+  <div class="product-card__text">
+    <a href="#" class="product-card__text__name">Название: <b>{{productInfo.name}}</b></a>
+    <p class="product-card__text__price"
+       *ngIf="productInfo.price !== 0">{{productInfo.price | currency:'USD':true}}</p>
+    <p class="product-card__text__price" *ngIf="productInfo.price === 0">Под заказ</p>
+    <p class="product-card__text__description">{{productInfo.description}}</p>
+  </div>
 </div>
 

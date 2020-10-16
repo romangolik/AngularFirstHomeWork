@@ -1,17 +1,16 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import {RouterModule} from "@angular/router";
+import {CommonModule} from "@angular/common";
 
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
-import {PortalModule} from "./containers/portal/portal.module";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [ AppComponent ],
   imports: [
-    PortalModule,
+    RouterModule,
+    CommonModule,
     BrowserModule,
     AppRoutingModule
   ],
