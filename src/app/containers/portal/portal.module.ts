@@ -4,6 +4,7 @@ import {PortalComponent} from "./portal.component";
 import {CatalogModule} from "./catalog/catalog.module";
 
 import {PortalRouting} from "./portal.routing";
+import {HeaderComponent} from "../../components/header/header.component";
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import {PortalRouting} from "./portal.routing";
   ],
   declarations: [
     PortalComponent,
+    HeaderComponent,
   ],
   exports: [ PortalComponent ]
 })

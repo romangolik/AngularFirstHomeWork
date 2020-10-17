@@ -5,10 +5,6 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./containers/portal/portal.module').then(u => u.PortalModule)
-  },
-  {
-    path: 'admin',
-    loadChildren: () => import('./containers/admin-page/admin-page.module').then(u => u.AdminPageModule)
   }
 ];
 

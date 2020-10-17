@@ -10,6 +10,10 @@ const routes: Routes = [
     children: [
       {
         path: '',
+        redirectTo: 'products-list'
+      },
+      {
+        path: 'products-list',
         loadChildren: () => import('./catalog/catalog.module').then(u => u.CatalogModule)
       }
     ]
