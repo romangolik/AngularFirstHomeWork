@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ProductInfo} from "../productinfo";
 
 @Component({
@@ -8,4 +8,11 @@ import {ProductInfo} from "../productinfo";
 })
 export class ProductCardComponent {
   @Input() productInfo: ProductInfo;
+
+  @Input() active: boolean;
+  @Output() activeChange = new EventEmitter<boolean>();
+
+  openProductInfoForm() {
+    this.activeChange.emit(!this.active);
+  }
 }

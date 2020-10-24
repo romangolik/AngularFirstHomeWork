@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ProductInfo} from "./productinfo";
 import {productsInfo} from "./product-info";
 
@@ -13,4 +13,6 @@ export class ProductsListComponent {
   constructor() { }
 
   arrayOfProducts: ProductInfo[] = productsInfo;
+
+  active: boolean = false;
 }
