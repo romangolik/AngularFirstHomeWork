@@ -5,10 +5,10 @@ import {productsInfo} from "./product-info";
 
 @Component({
   selector: 'app-catalog',
-  templateUrl: './catalog.component.html',
-  styleUrls: ['./catalog.component.scss']
+  templateUrl: './products-list.component.html',
+  styleUrls: ['./products-list.component.scss']
 })
-export class CatalogComponent {
+export class ProductsListComponent {
 
   constructor() { }
 

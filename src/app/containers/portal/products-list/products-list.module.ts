@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {ProductCardComponent} from "./product-card/product-card.component";
-import {CatalogComponent} from "./catalog.component";
-import {CatalogPageRouting} from "./catalog.routing";
+import {ProductsListComponent} from "./products-list.component";
+import {ProductsListRouting} from "./products-list.routing";
 
 @NgModule({
   declarations: [
-    CatalogComponent,
+    ProductsListComponent,
     ProductCardComponent
   ],
   imports: [
     CommonModule,
-    CatalogPageRouting
+    ProductsListRouting
   ],
   exports:[
-    CatalogComponent
+    ProductsListComponent
   ]
 })
-export class CatalogModule { }
+export class ProductsListModule { }
