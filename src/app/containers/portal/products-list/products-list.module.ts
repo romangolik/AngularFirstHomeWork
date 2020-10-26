@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { ProductCardComponent } from "./product-card/product-card.component";
 import { ProductsListComponent } from "./products-list.component";
@@ -13,6 +14,7 @@ import { ProductInfoFormComponent } from "../../../components/product-info-form/
     ProductInfoFormComponent
   ],
   imports: [
+    FormsModule,
     CommonModule,
     ProductsListRouting
   ],

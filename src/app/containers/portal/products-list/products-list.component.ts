@@ -14,5 +14,16 @@ export class ProductsListComponent {
 
   arrayOfProducts: ProductInfo[] = productsInfo;
 
-  active: boolean = false;
+  showForm: boolean = false;
+  displayedProductIndex: number;
+
+  showCardInfo(id: number) {
+    this.showForm = !this.showForm;
+    this.displayedProductIndex = id;
+  }
+
+  changeProductInfo(productInfo: ProductInfo) {
+    this.arrayOfProducts[this.displayedProductIndex] = productInfo;
+    this.showForm = false;
+  }
 }

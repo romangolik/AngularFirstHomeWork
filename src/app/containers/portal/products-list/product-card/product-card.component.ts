@@ -9,10 +9,9 @@ import {ProductInfo} from "../productinfo";
 export class ProductCardComponent {
   @Input() productInfo: ProductInfo;
 
-  @Input() active: boolean;
-  @Output() activeChange = new EventEmitter<boolean>();
+  @Output() showCardInfo = new EventEmitter<boolean>();
 
   openProductInfoForm() {
-    this.activeChange.emit(!this.active);
+    this.showCardInfo.emit(true);
   }
 }

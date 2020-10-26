@@ -1,6 +1,10 @@
 <div class="catalog__cards">
-  <div *ngFor="let product of arrayOfProducts" class="catalog__cards__item">
-    <app-product-card [productInfo]="product" [(active)]="active"></app-product-card>
+  <div *ngFor="let product of arrayOfProducts; let i = index" class="catalog__cards__item">
+    <app-product-card [productInfo]="product" (showCardInfo)="showCardInfo(i)"></app-product-card>
   </div>
 </div>
-<app-product-info-form [showForm]="active"></app-product-info-form>
+<app-product-info-form
+  *ngIf="showForm"
+  [product]="arrayOfProducts[displayedProductIndex]"
+  (saveNewInfo)="changeProductInfo($event)">
+</app-product-info-form>
