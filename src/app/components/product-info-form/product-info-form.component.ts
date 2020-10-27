@@ -28,4 +28,10 @@ export class ProductInfoFormComponent implements OnInit{
     this.saveNewInfo.emit(this.productCopy);
     this.showFormChange.emit(false);
   }
+
+  closeForm() {
+    console.log(ProductInfo.isEqual(this.product, this.productCopy));
+    this.saveNewInfo.emit(this.product);
+    this.showFormChange.emit(false);
+  }
 }

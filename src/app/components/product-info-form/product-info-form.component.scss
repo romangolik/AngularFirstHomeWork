@@ -22,4 +22,10 @@
   background: silver;
 
   z-index: 110;
+
+  &__close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
