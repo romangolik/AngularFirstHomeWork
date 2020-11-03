@@ -1,0 +1,13 @@
+<div *ngIf="!showButtons" class="toast-container">
+  <div class="toast__info">
+    <p>Изминения сохранены</p>
+    <button (click)="saveChanges(true)">Ок</button>
+  </div>
+</div>
+<div *ngIf="showButtons" class="toast-container">
+  <div class="toast__info">
+    <p>Есть не сохранены изменения, вы хотите их сохранить?</p>
+    <button (click)="saveChanges(true)">Да</button>
+    <button (click)="saveChanges(false)">Нет</button>
+  </div>
+</div>

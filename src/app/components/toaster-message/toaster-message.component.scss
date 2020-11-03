@@ -1,0 +1,20 @@
+.toast-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  width: 30%;
+  height: 200px;
+  background: #FFFFFF;
+
+  z-index: 200;
+
+  text-align: center;
+
+  .toast__info {
+    width: 80%;
+    margin: auto;
+  }
+}

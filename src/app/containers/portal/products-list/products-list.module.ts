@@ -1,22 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
 import { ProductCardComponent } from "./product-card/product-card.component";
 import { ProductsListComponent } from "./products-list.component";
 import { ProductsListRouting } from "./products-list.routing";
-import { ProductInfoFormComponent } from "../../../components/product-info-form/product-info-form.component";
+import { ProductInfoFormModule } from '../../../components/product-info-form/product-info-form.module';
 
 @NgModule({
   declarations: [
     ProductCardComponent,
-    ProductsListComponent,
-    ProductInfoFormComponent
+    ProductsListComponent
   ],
   imports: [
-    FormsModule,
     CommonModule,
-    ProductsListRouting
+    ProductsListRouting,
+    ProductInfoFormModule
   ],
   exports:[
     ProductsListComponent

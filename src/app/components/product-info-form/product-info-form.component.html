@@ -1,5 +1,5 @@
 <div class="product-info-form-background"></div>
-<form class="product-info-form">
+<form class="product-info-form" [class.hide]="close || savedChanges">
   <h2 class="heading-container__text">Информация о товаре</h2>
   <button class="product-info-form__close-button" type="submit" (click)="closeForm()">X</button>
   <div class="">
@@ -43,3 +43,8 @@
     <button type="submit" (click)="saveProductInfo()">Сохранить</button>
   </div>
 </form>
+<app-toaster-message
+  *ngIf="close || savedChanges"
+  [showButtons]="close"
+  (agree)="agreeSave($event)">
+</app-toaster-message>

@@ -15,6 +15,9 @@ export class ProductInfoFormComponent implements OnInit{
 
   private selectedFile: File;
   productCopy: ProductInfo;
+  close = false;
+  notEquals = false;
+  savedChanges = false;
 
   ngOnInit() {
     this.productCopy = new ProductInfo(this.product);
@@ -25,13 +28,28 @@ export class ProductInfoFormComponent implements OnInit{
   }
 
   saveProductInfo() {
-    this.saveNewInfo.emit(this.productCopy);
-    this.showFormChange.emit(false);
+    this.savedChanges = true;
+    this.savePreviousValue(ProductInfo.isEqual(this.product, this.productCopy));
   }
 
   closeForm() {
-    console.log(ProductInfo.isEqual(this.product, this.productCopy));
-    this.saveNewInfo.emit(this.product);
+    this.close = true;
+    this.savePreviousValue(ProductInfo.isEqual(this.product, this.productCopy));
+  }
+
+  agreeSave(agree: boolean) {
+    if (agree) {
+      this.saveNewInfo.emit(this.productCopy);
+    } else {
+      this.saveNewInfo.emit(this.product);
+    }
     this.showFormChange.emit(false);
+  }
+
+  savePreviousValue(equals) {
+    if(equals) {
+      this.saveNewInfo.emit(this.product);
+      this.showFormChange.emit(false);
+    }
   }
 }
