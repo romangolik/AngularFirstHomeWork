@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ProductsListRouting } from "./products-list.routing";
 
 import { ProductCardComponent } from "./product-card/product-card.component";
 import { ProductsListComponent } from "./products-list.component";
-import { ProductsListRouting } from "./products-list.routing";
-import { ProductInfoFormModule } from '../../../components/product-info-form/product-info-form.module';
 
 @NgModule({
   declarations: [
@@ -13,8 +12,7 @@ import { ProductInfoFormModule } from '../../../components/product-info-form/pro
   ],
   imports: [
     CommonModule,
-    ProductsListRouting,
-    ProductInfoFormModule
+    ProductsListRouting
   ],
   exports:[
     ProductsListComponent

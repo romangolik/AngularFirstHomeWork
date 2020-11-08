@@ -1,10 +1,5 @@
 <div class="catalog__cards">
   <div *ngFor="let product of arrayOfProducts; let i = index" class="catalog__cards__item">
-    <app-product-card [productInfo]="product" (showCardInfo)="showCardInfo(i)"></app-product-card>
+    <app-product-card [productInfo]="product" [indexOfProduct]="i"></app-product-card> <!--(showCardInfo)="showCardInfo(i)-->
   </div>
 </div>
-<app-product-info-form
-  *ngIf="showForm"
-  [product]="arrayOfProducts[displayedProductIndex]"
-  (saveNewInfo)="changeProductInfo($event)">
-</app-product-info-form>

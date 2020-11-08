@@ -1,7 +1,6 @@
-<div class="product-info-form-background"></div>
-<form class="product-info-form" [class.hide]="close || savedChanges">
+<form class="product-info-form">
   <h2 class="heading-container__text">Информация о товаре</h2>
-  <button class="product-info-form__close-button" type="submit" (click)="closeForm()">X</button>
+  <button type="submit" class="product-info-form__close-button" (click)="closePage()">X</button>
   <div class="">
     <div>
       <p><label for="name">Имя товара:</label></p>
@@ -33,18 +32,18 @@
         required
         [(ngModel)]="productCopy.price">
     </div>
-    <input
+    <!--<input
       id="imageLink"
       type="file"
       name="imageLink"
-      (change)="onFileSelect($event)">
+      (change)="onFileSelect($event)">-->
   </div>
   <div>
     <button type="submit" (click)="saveProductInfo()">Сохранить</button>
   </div>
 </form>
-<!--<app-toaster-message
+<app-toaster-message
   *ngIf="close || savedChanges"
   [showButtons]="close"
   (agree)="agreeSave($event)">
-</app-toaster-message>-->
+</app-toaster-message>

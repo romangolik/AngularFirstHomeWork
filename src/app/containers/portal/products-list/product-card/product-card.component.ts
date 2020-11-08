@@ -8,6 +8,7 @@ import {ProductInfo} from "../productinfo";
 })
 export class ProductCardComponent {
   @Input() productInfo: ProductInfo;
+  @Input() indexOfProduct: number;
 
   @Output() showCardInfo = new EventEmitter<boolean>();
 

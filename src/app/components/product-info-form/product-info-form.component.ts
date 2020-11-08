@@ -16,7 +16,6 @@ export class ProductInfoFormComponent implements OnInit{
   private selectedFile: File;
   productCopy: ProductInfo;
   close = false;
-  notEquals = false;
   savedChanges = false;
 
   ngOnInit() {
