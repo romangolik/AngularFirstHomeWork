@@ -5,7 +5,7 @@ import {CommonModule} from "@angular/common";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthGuard } from './auth/auth.guard';
+import { AuthorizationCheckGuard } from './auth/authorization-check.guard';
 
 @NgModule({
   declarations: [ AppComponent ],
@@ -15,7 +15,7 @@ import { AuthGuard } from './auth/auth.guard';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [ AuthGuard ],
+  providers: [ AuthorizationCheckGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

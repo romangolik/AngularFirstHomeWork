@@ -10,7 +10,8 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'products-list'
+        redirectTo: 'products-list',
+        pathMatch: 'full'
       },
       {
         path: 'products-list',

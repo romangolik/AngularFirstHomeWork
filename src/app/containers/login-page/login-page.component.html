@@ -1,0 +1,23 @@
+<form class="login-form" (submit)="loginUser()">
+  <div>
+    <p class="login-form__field login-form__field_mail"><label for="mail">Mail</label></p>
+    <input
+      #mail="ngModel"
+      id="mail"
+      type="email"
+      name="mail"
+      required
+      [(ngModel)]="user.mail">
+  </div>
+  <p class="login-form__field login-form__field_password"><label for="password">Password</label></p>
+  <input
+    #password="ngModel"
+    id="password"
+    type="password"
+    name="password"
+    required
+    [(ngModel)]="user.password">
+  <div>
+    <button type="submit" routerLink="/">Log In</button>
+  </div>
+</form>
