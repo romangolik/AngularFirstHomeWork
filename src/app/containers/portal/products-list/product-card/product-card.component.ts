@@ -1,5 +1,6 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {ProductInfo} from "../productinfo";
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {ProductInfo} from "../../../../rest/products-info/productinfo";
+import { ToasterMessageMenageService } from '../../../../core/toaster-message-manage/toaster-message-menage.service';
 
 @Component({
   selector: 'app-product-card',
@@ -10,9 +11,12 @@ export class ProductCardComponent {
   @Input() productInfo: ProductInfo;
   @Input() indexOfProduct: number;
 
-  @Output() showCardInfo = new EventEmitter<boolean>();
+  @Output() idOfDeletedProduct = new EventEmitter<number>();
 
-  openProductInfoForm() {
-    this.showCardInfo.emit(true);
+  constructor(private toasterMessageMenageService: ToasterMessageMenageService) {}
+
+  deleteProduct() {
+    this.idOfDeletedProduct.emit(this.indexOfProduct);
+    this.toasterMessageMenageService.showToasterMessage("Продукт успешно удален");
   }
 }

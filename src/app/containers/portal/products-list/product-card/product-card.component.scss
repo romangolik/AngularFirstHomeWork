@@ -56,9 +56,19 @@
 
   &__change-button {
     position: absolute;
-    bottom: 16px;
+    bottom: 30px;
     right: 16px;
 
     height: 30px;
+    width: 76px;
+  }
+
+  &__delete-button {
+    position: absolute;
+    bottom: 0;
+    right: 16px;
+
+    height: 30px;
+    width: 76px;
   }
 }

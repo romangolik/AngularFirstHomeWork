@@ -9,5 +9,6 @@
        *ngIf="productInfo.price !== 0">{{productInfo.price | currency:'USD':true}}</p>
     <p class="product-card__text__price" *ngIf="productInfo.price === 0">Под заказ</p>
   </div>
-  <button class="product-card__change-button" [routerLink]="indexOfProduct">Изменить</button>  <!--(click)="openProductInfoForm()"-->
+  <button class="product-card__delete-button" (click)="deleteProduct()">Удалить</button>
+  <button class="product-card__change-button" routerLink="/product-info/{{indexOfProduct}}">Изменить</button>  <!--(click)="openProductInfoForm()"-->
 </div>
