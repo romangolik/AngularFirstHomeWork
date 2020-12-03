@@ -1,4 +1,7 @@
-<form class="login-form" (submit)="loginUser()">
+<form
+  #loginForm="ngForm"
+  class="login-form"
+  (submit)="loginUser()">
   <div>
     <p class="login-form__field login-form__field_mail"><label for="mail">Mail</label></p>
     <input
@@ -7,7 +10,10 @@
       type="email"
       name="mail"
       required
-      [(ngModel)]="user.mail">
+      pattern="(\W|^)[\w.\-]{0,25}@gmail\.com(\W|$)"
+      [class.error]="mail.invalid && (mail.dirty || mail.touched || mail.errors?.pattern)"
+      [class.valid]="!mail.errors?.pattern && mail.touched && mail.dirty &&  mail.valid"
+      [(ngModel)]="userInfo.mail">
   </div>
   <p class="login-form__field login-form__field_password"><label for="password">Password</label></p>
   <input
@@ -16,8 +22,11 @@
     type="password"
     name="password"
     required
-    [(ngModel)]="user.password">
+    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[_]).{8,30}$"
+    [class.error]="password.invalid && (password.dirty || password.touched || password.errors?.pattern)"
+    [class.valid]="!password.errors?.pattern && password.touched && password.dirty &&  password.valid"
+    [(ngModel)]="userInfo.password">
   <div>
-    <button type="submit" routerLink="/">Log In</button>
+    <button [class.inactive]="loginForm.invalid && (loginForm.dirty || loginForm.touched || loginForm.pristine)" type="submit">Log In</button>
   </div>
 </form>

@@ -1,0 +1,16 @@
+input {
+  &.error {
+    border-color: red;
+  }
+
+  &.valid {
+    border-color: lime;
+  }
+}
+
+button {
+  &.inactive {
+    pointer-events: none;
+    opacity: 0.8;
+  }
+}
