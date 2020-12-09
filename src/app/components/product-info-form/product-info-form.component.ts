@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ProductInfo } from "../../containers/portal/products-list/productinfo";
+import { ProductInfo } from "../../rest/products-info/productinfo";
 
 @Component({
   selector: 'app-product-info-form',

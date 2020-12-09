@@ -42,8 +42,3 @@
     <button type="submit" (click)="saveProductInfo()">Сохранить</button>
   </div>
 </form>
-<app-toaster-message
-  *ngIf="close || savedChanges"
-  [showButtons]="close"
-  (agree)="agreeSave($event)">
-</app-toaster-message>

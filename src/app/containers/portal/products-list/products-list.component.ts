@@ -1,6 +1,7 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {ProductInfo} from "./productinfo";
-import {productsInfo} from "./product-info";
+import { Component, EventEmitter } from '@angular/core';
+import {ProductInfo} from "../../../rest/products-info/productinfo";
+import { ProductsInfoService } from '../../../rest/products-info/products-info.service';
+import { productsInfo } from '../../../rest/products-info/product-info';
 
 
 @Component({
@@ -10,20 +11,19 @@ import {productsInfo} from "./product-info";
 })
 export class ProductsListComponent {
 
-  constructor() { }
+  arrayOfProducts: ProductInfo[];
+  message: string;
 
-  arrayOfProducts: ProductInfo[] = productsInfo;
-
-  showForm: boolean = false;
-  displayedProductIndex: number;
-
-  showCardInfo(id: number) {
-    this.showForm = !this.showForm;
-    this.displayedProductIndex = id;
+  constructor(public productsInfoService: ProductsInfoService) {
+    this.productsInfoService.getProducts()
+      .subscribe(result => this.arrayOfProducts = result.map(item => new ProductInfo(item)))
   }
 
-  changeProductInfo(productInfo: ProductInfo) {
-    this.arrayOfProducts[this.displayedProductIndex] = productInfo;
-    this.showForm = false;
+  deleteProduct(id: number) {
+    this.productsInfoService.deleteProduct(id)
+      .subscribe(value => this.message = value);
+    this.arrayOfProducts.splice(id, 1);
   }
 }
+
+

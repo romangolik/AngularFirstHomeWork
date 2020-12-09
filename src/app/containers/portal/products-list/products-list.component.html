@@ -1,6 +1,10 @@
+<button routerLink="/product-info">Добавить продукт</button>
 <div class="catalog__cards">
   <div *ngFor="let product of arrayOfProducts; let i = index" class="catalog__cards__item">
-    <app-product-card [productInfo]="product" [indexOfProduct]="i"></app-product-card> <!--(showCardInfo)="showCardInfo(i)-->
+    <app-product-card
+      [indexOfProduct]="i"
+      [productInfo]="product"
+      (idOfDeletedProduct)="deleteProduct($event)">
+    </app-product-card>
   </div>
 </div>
-<router-outlet></router-outlet>
